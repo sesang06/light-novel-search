@@ -6,6 +6,14 @@ https://www.sysnet.pe.kr/2/0/11664
 
 https://wedul.site/517
 
+## 자바 설치
+~~~
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+~~~
 ## 실행
 
 ~~~
@@ -15,7 +23,7 @@ https://wedul.site/517
 * 열리는 포트
 
 ~~~
-url -XGET "http://localhost:9200/"
+curl -XGET "http://localhost:9200/"
 ~~~
 
 ## 중지
@@ -45,7 +53,7 @@ curl -XPUT "http://localhost:9200/light_novel/" -H "Content-Type: application/js
 ## 매핑 상태 확인
 
 ```
-$ url -XGET "http://localhost:9200/light_novel/_mapping"
+$ curl -XGET "http://localhost:9200/light_novel/_mapping"
 {
     "light_novel": {
         "mappings": {
